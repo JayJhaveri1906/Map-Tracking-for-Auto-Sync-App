@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Google Maps from Google Spreadsheets Demo</title>
+    <link rel="stylesheet" href="map.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- <script async src='/cdn-cgi/bm/cv/669835187/api.js'></script> -->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
+</head>
+
+
+<body style="background-image:url('lightBg.jpg');">
+    <h1>
+        <center><u>Aatmanirbhar Samakraman</u></center>
+    </h1>
+    <center>
+        <h2>(Map-based-Tracker to trace uploads by Samakraman Application)</h2>
+    </center>
+    <center><img id="imgg" src="final_logo.png" style="width:45vh;height:40vh;margin:-7vh 0vh -8vh -11vh"></center>
+
+    <!--<h3>To view the data in a tabular format click <a href="https://docs.google.com/spreadsheets/d/1iwElhVJVB7coTzqPIeSagLNvldS5tTm61_w9b6iOycw/edit?usp=sharing" target="_blank">here</a></h3>-->
+    <!--<p>It loads and parses an <a href="https://docs.google.com/spreadsheets/d/1iwElhVJVB7coTzqPIeSagLNvldS5tTm61_w9b6iOycw/edit#gid=0" target="_blank"> example publicly available Google spreadsheet</a> each time it loads the page (before generating a map out of it), so it could do with a bit of optimisaiton.</p>-->
+
+
+
+    <script src="map.js"></script>
+
+    <div id="filters">
+        <div id="searchMap">
+            <h3>Select Start Date
+            </h3>
+            <div class="input-group">
+                <input class="form-control" id="fStDt" type="date" placeholder="Search for..."
+                    onchange="filterStDt(this.value,1);">
+                <!--<button type="button" class="btn btn-warning" id="resetDatee" onclick="resetDate();" > Reset date</button>-->
+            </div>
+        </div>
+        <div id="searchMap">
+            <h3>Select End Date
+            </h3>
+            <div class="input-group">
+                <input class="form-control" id="fEnDt" type="date" placeholder="Search for..."
+                    onchange="filterEnDt(this.value,1);">
+                <!--<button type="button" class="btn btn-warning" id="resetDatee" onclick="resetDate();" > Reset date</button>-->
+            </div>
+        </div>
+
+        <div id="searchMap1">
+            <h3>Search Location
+
+            </h3>
+            <div class="input-group">
+                <input class="form-control" id="fLoc" type="text" placeholder="Search for..."
+                    onchange="filterLoc(this.value);">
+                <!--<button type="button" class="btn btn-warning" id="resetTextt" onclick="resetText();" > Reset text filter</button>-->
+            </div>
+        </div>
+
+        <div id="searchMap1">
+            <h3>Search File Name
+
+            </h3>
+            <div class="input-group">
+                <input class="form-control" id="fFname" type="text" placeholder="Search for..."
+                    onchange="filterName(this.value);">
+                <!--<button type="button" class="btn btn-warning" id="resetTextt" onclick="resetText();" > Reset text filter</button>-->
+            </div>
+        </div>
+
+        <!--<div class="alert">There is no result for your current search</div>-->
+
+    </div>
+
+    <center><button type="button" class="btn btn-danger" id="resetFilter" onclick="resetFilters();"> Full Reset</button>
+    </center>
+    </div>
+
+
+
+    <div id="map"></div>
+    <!-- Replace the value of the key parameter in the call to the Google Maps JavaScript API URL below with your own API key. -->
+    <!-- Make sure your API key is authorised to access the Google Maps API - you can enable that through your Google Developer console. -->
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=YourKeyHere&callback=initialiseMap">
+        </script>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+    <script
+        type="text/javascript">(function () { window['__CF$cv$params'] = { r: '6dac7612dcb731f9', m: '2QqRtLmmC6_BG8oJrT_9OPExiLzbrVTkty7gOV6Hr8k-1644403034-0-AfVQCu0lsmQMvMCSKYRMskKP+nPjgQkmL5OKSNU1Fw3v7/jJ/THFlOo/3YAj2Bwxyby8bteSrt+X41ENvrQVs7nxrY6UgMAg3cSNigPSLQuW6iy3Y5ke7l/a1vPxa0GsPI40oarrpVzvJEiydxgI1OUILu+OsREvXZWa1Az5qkaHmlmpFr1V5FGu2ccUUvh4JA==', s: [0xc6450f5732, 0x616b3cdb6e], } })();</script>
+</body>
+
+</html>

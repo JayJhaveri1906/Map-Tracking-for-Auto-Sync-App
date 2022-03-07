@@ -1,0 +1,26 @@
+#map {
+  /* border-block-color: black; */
+  margin: 50px;
+  height: 600px;
+  width: auto;
+  /* border: black; */
+  /* border-block-width: 10px; */
+  /* border-width: thick; */
+  border-style: dashed;
+}
+
+#filters {
+  margin: 5vh;
+  margin-top: 5vh;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#resetFilter {
+  margin-top: -7vh;
+}
+
+#filters > div {
+  margin: 0.5em;
+}
+
